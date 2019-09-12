@@ -1,3 +1,3 @@
 document.body.onlick=function(){
-    alert
+    alert(1);
 }
