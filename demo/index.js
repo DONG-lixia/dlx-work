@@ -1,3 +1,6 @@
-document.body.onclick=function(){
-    alert(1);
-}
+
+			var ball=document.getElementById('yuan');
+	        ball.onclick =function(){
+	        	ball.style.background='yellow';
+	        }
+		
