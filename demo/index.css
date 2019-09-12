@@ -2,11 +2,9 @@ body{
   height:1000px;
   background-color:red;
 }
-<style type="text/css">
-			#yuan{
-				width:200px;
-				height:200px;
-				border-radius:50%;
-				background:blue;
-			}
-		</style>
+	#yuan{
+		width:200px;
+		height:200px;
+		border-radius:50%;
+		background:blue;
+}
