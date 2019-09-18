@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="in1">
+    <input type="text" id="in2">
+    <button id="btn">计算按钮</button>
+    <div id="show"></div>
+    <script>
+    
+        var in1 = document.getElementById('in1');
+        var in2 = document.getElementById('in2');
+        var btn = document.getElementById('btn');
+        
+     
+        btn.onclick = function(){
+            var text1 = parseInt(in1.value);
+            var text2 = parseInt(in2.value);
+           if(!text1||!text2){
+               alert("请输入数字")
+           }else
+           var result= text1 + text2
+           show.innerHTML = result
+        }
+    </script>
+    
+</body>
+</html>
