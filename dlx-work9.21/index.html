@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">ATM</button>
+		<script type="text/javascript">
+			var card = '123456789';
+			var password ='123456';
+			var money = 10000;
+			btn.onclick = function(){
+			    var card1 =prompt('请输入你的卡号');
+	            var pass1 =prompt('请输入你的密码');
+			    if(card1==card || pass1==password){
+			        alert('账户密码输入正确,');
+			        do{
+			    	    var mon =prompt('请输入取款金额');
+			    	    if(mon>money){
+			    		    alert('账户余额不足');
+			    	    }else{
+			    		    alert('剩余金额为'+(money-mon));
+			    		    break
+			    	    }
+			        }while(true)
+			    
+			    }else{
+				    alert('请输入正确账号和密码');
+			    }
+			}
+			
+		
+			
+			
+		</script>
+		
+	</body>
+</html>
