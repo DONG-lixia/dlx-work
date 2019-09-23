@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.red{
+				background-color: red;
+			}
+			.blue{
+				background-color:blue!important;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<script>
+			var div1 =document.getElementsByTagName('div');
+			for(var i=0;i<div1.length;i++){
+				div1[i].style.width="50px";
+				div1[i].style.height="50px";
+				div1[i].className="red";
+				div1[i].style.marginRight="20px";
+				div1[i].style.float="left";
+			}
+			div1[2].className='blue';
+			
+		</script>
+	</body>
+</html>
