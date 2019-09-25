@@ -8,8 +8,8 @@
             position:relative;
         }
         #box > div{
-            width:50px;
-            height:50px;
+            width:60px;
+            height:60px;
             /* border:1px solid black; */
             position:absolute;
             background-image: url(img/haimian.jpg);
@@ -23,15 +23,15 @@
         <script>
          var box = document.getElementById('box');
          //要一个10行10列的大表格 50*50
-         for(var i=0;i<12;i++){
-            for(var j=0;j<19.2;j++){
+         for(var i=0;i<10;i++){
+            for(var j=0;j<16;j++){
                 var div = document.createElement('div');
                 box.appendChild(div);
                 //i=0 i=1
-                div.style.top = i * 50 +'px';
-                div.style.left = j * 50 + 'px';
-                div.style.backgroundPositionY = i * -50 + 'px';
-                div.style.backgroundPositionX = j * -50 + 'px';
+                div.style.top = i * 60 +'px';
+                div.style.left = j * 60 + 'px';
+                div.style.backgroundPositionY = i * -60 + 'px';
+                div.style.backgroundPositionX = j * -60 + 'px';
                 div.onmousemove=function(){
                    this.style.opacity = 1;
                 }
