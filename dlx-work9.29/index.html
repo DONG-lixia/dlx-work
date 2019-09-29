@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#box{
+				width:500px;
+				height:500px;
+				margin:100px auto;
+				background-color:cornflowerblue;
+				padding-left:200px;
+				padding-top:50px;
+			}
+            #box>p{
+            	font-size:20px;
+            	font-family: "微软雅黑";
+            }
+            #box>input{
+            	width:300px;
+            	height:50px;
+            }
+            #btn{
+            	width:100px;
+            	height:50px;
+            	margin-left:100px;
+            	margin-top:50px;
+            	background-color: black;
+            }
+            #btn>a{
+            	text-decoration: none;
+            	color:#fff;
+            }
+		</style>
+	</head>
+	<body>
+		<!--
+			需求2:  
+        1. 做一个简单的注册界面  
+        2. 要求用户名和密码必须写才可以提交
+        3. 提交之后弹出注册成功
+        4. 如果有没有写的内容,进行提示
+        5. 用户准备填写时,在右侧提示改用户名是否可以注册
+        6.已经有的用户名可以用一个数组创建
+		7、已有用户名分别为'tom','jack','lili'
+		-->
+        <div id="box">
+            <p>请输入用户名</p>
+        	<input type="text" name="1" id="in1" value="" />
+        	<span href="" id="span" style="display: none;">该用户名已被使用</span><br>
+        	<p>请输入用户密码</p>
+            <input type="password" name="1" id="in2" value="" /><br>
+            <button type="submit" id="btn"><a href="#">注册登录</a></button>
+        </div>
+
+        <script>
+        	var in1 = document.getElementById('in1');
+        	var span = document.getElementById('span');
+        	var in2 = document.getElementById('in2');
+        	var btn = document.getElementById('btn');
+        	var yhm =['tom','jack','lili'];
+        	
+        	in1.onblur = function(){
+        		if(yhm.indexOf(in1.value)!= -1){
+        			span.style.display='inline-block';
+        		}else{
+        			span.style.display='none';
+        		}
+        	}
+        	
+        	btn.onclick = function(){
+        		if(in1.value==''&&in2.value==''){
+        			alert('请输入用户名和密码');
+        		}else if(in1.value==''){
+        			alert('请输入用户名')
+        		}else if(in2.value==''){
+        			alert('请输入密码')
+        		}else{
+        			if(name.indexOf(in1.value)!= -1){
+        				alert('请重新输入用户名');
+        			}else{
+        			alert('注册成功,请登录');
+        			}
+        		}
+        	}
+	
+	
+        </script>
+
+	</body>
+</html>
