@@ -1,0 +1,257 @@
+/*1.头部*/
+body{
+	margin:0;
+}
+#header{
+	width:100%;
+	height:85px;
+	background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+}
+/*头部左边*/
+#header-left{
+	margin-left:100px;
+	width:660px;
+	height:85px;
+	line-height: 85px;
+	display: flex;
+}
+#header-left #ul-list ul{
+	width:325px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	padding:0;
+	margin:0;
+	margin-left:30px;
+	
+}
+#header-left ul>li{
+	list-style: none;
+	
+}
+#header-left ul>li a{
+	text-decoration: none;
+	color:#787878;
+	font-size: 16px;
+	font-family: "微软雅黑";
+}
+/*头部右边*/
+#header-right{
+    width:660px;
+    height:85px;
+    display: flex;
+    justify-content: flex-end;
+}
+#header-right #one{
+	width:200px;
+	height:85px;
+	border-left:1px solid #ebebeb;
+	text-align: center;
+	line-height:85px;
+	color:#818181;
+	font-size: 14px;
+    font-weight: 500;
+    
+}
+#header-right #one img{
+    vertical-align: top;	
+}
+
+#header-right #two{
+	width:90px;
+	height:85px;
+	border-left:1px solid #ebebeb;
+	text-align: center;
+	
+}
+#header-right #three{
+	width:90px;
+	height:85px;
+	border-left:1px solid #ebebeb;
+	text-align: center;
+}
+#header-right #four{
+	width:90px;
+	height:85px;
+	border-left:1px solid #ebebeb;
+	text-align: center;
+}
+#header-right img{
+	width:20px;
+	height:20px;
+	margin-top:32px;
+}
+/*主体*/
+#topic #img img{
+	width:100%;
+	height:400px;
+}
+#topic #text{
+	width:800px;
+	height:870px;
+	/*background-color: goldenrod;*/
+	margin:0 auto;
+	margin-top:80px;
+}
+#topic #text h2{
+	font-size: 30px;
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
+#topic #text p{
+	font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 50px;
+    color:#787878;
+    line-height: 2;
+}
+#topic #text #DH{
+	display: flex;
+}
+#topic #text #DH img{
+	width:30px;
+	height:30px;
+}
+#topic #text #DH h6{
+	margin:0;
+	font-size: 18px;
+    line-height: 2;
+    margin-left:30px;
+    padding-bottom:15px;
+}
+#topic #text span{
+	margin-left: 60px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.6);
+}
+/*尾部*/
+#footer{
+	width:100%;
+	height:450px;
+	background-color: #252525;
+}
+#footer #footer-top{
+	display: flex;
+	justify-content:center;
+	padding-top:100px;
+}
+#footer #footer-top #footer-one{
+	width:570px;
+	height:114px;
+}
+#footer #footer-top #footer-one {
+	display: flex;
+	margin:0;
+}
+#footer #footer-top #footer-one ul{
+	width:350px;
+	height:24px;
+	display: flex;
+	justify-content:flex-start;
+	padding:0;
+	margin:0;
+	margin-left:50px;
+}
+#footer #footer-top #footer-one ul li{
+	list-style: none;
+}
+#footer #footer-top #footer-one ul li a{
+	text-decoration: none;
+	font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+    font-weight: 400;
+    font-family: "Ubuntu", sans-serif;
+    padding: 0 10px;
+}
+#footer #footer-top #footer-one ul li a:hover{
+	color:#fff;
+}
+#footer #footer-top #footer-two{
+	width:570px;
+	height:114px;
+
+}
+#footer #footer-top #footer-two{
+	display: flex;
+	justify-content: flex-start;
+}
+#footer #footer-top #footer-two >div{
+	margin-right:100px;
+}
+#footer #footer-top #footer-two ul{
+	padding:0;
+	margin:0;
+}
+#footer #footer-top #footer-two ul li{
+	list-style: none;
+}
+#footer #footer-top #footer-two ul li a{
+	font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-family: "微软雅黑";
+}
+#footer #footer-botton{
+	display: flex;
+	justify-content:center;
+	
+}
+#footer #footer-botton #botton-one{
+	width:570px;
+	height:114px;
+}
+#footer #footer-botton #botton-two{
+	width:570px;
+	height:114px;
+}
+#footer #footer-botton #botton-one h6{
+	color: #ffffff;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+#footer #footer-botton #botton-one input{
+	width:270px;
+	height:35px;
+	margin-top:25px;
+	  
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    height: 35px;
+    background-color: transparent;
+}
+#footer #footer-botton #botton-two img{
+	margin-top:80px;
+}
+#footer  #dibu{
+	text-align: center;
+	color: #787878;
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 400;
+	margin-top: 40px;
+}
+#footer  #dibu a{
+	transition: all 500ms ease 0s;
+    text-decoration: none;
+    outline: 0 solid transparent;
+    color: #fbf5f5;
+    font-weight: 600;
+    font-size: 12px;
+}
+#footer  #dibu a:hover{
+	color:#000;
+}
+#footer  #dibu img{
+	float: right;
+	margin-right:60px;
+}
