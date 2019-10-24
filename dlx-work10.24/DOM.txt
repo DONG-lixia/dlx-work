@@ -1,0 +1,208 @@
+DOM
+1.获取元素
+1.1用Id获取元素
+getElementById()的方法,接受一个参数:获取元素的id,如果找到相应元素,则返回该元素的,否则返回null.
+
+    //用变量接住  在文档中 找 元素 用id  'd'
+    var d = document.getElementById('d');
+    
+1.2用标签名获取元素
+getElementByTagName()可以获取该元素名称下所有的元素,返回一个伪数组,或者说是一个节点列表.
+
+    var lis = document.getElementsByTagName('li');
+    //伪数组
+    console.log(lis);
+    
+在某一个元素中，并不是在全局文档中利用标签获取元素，这样更加精准.
+
+    var ul =document.getElementById('ul');
+    var list =ul.getElementsByTagName('li');
+    console.log(list);
+
+当元素只有一个的时候,返回的也依然是一个列表,而不是一个元素.可以通过数组的下标找到该元素.
+
+    var div = document.getElementsByTagName('div');
+    console.log(div[0]);
+    
+1.3用类名获取元素
+
+    var a = document.getElementsByClassName('a');
+    console.log(a);
+
+1.4用选择器获取元素  
+querySelector()和querySelectorAll()可以依靠选择器找到元素,但是前者只能找到元素列表的第一个元素,而后者可以全部找到.注意,该方法性能没有直接利用标签寻找高.
+
+    var ul = document.getElementById('ul')
+    var x = document.querySelector('#div>div a');
+    var lis = ul.querySelectorAll('li');
+    console.log(lis);
+
+1.5用name属性值获取元素
+getElementsByName()方法可以获取相同名称的name元素,返回一个伪数组对象.
+
+        <input type="radio" name="sex" value="0">男 
+        <input type="radio" name="sex" value="1">女
+    
+        var sex = document.getElementsByName('sex');
+        console.log(sex);
+ 
+2.获取和设置元素中的其他信息
+2.1获取元素名   
+当我们使用id获取元素的时候,元素的名称会和整个元素一起显示出来.如果想要拿到该元素的元素名,也就是标签名则需要用tagName属性.该属性只能获取,不能设置.
+
+        var div =document.getElementByID('mydiv');
+        console.log(div.tagName);//DIV
+ 
+2.2获取元素节点里的内容   
+当获取了元素之后,如果我们需要拿到元素中的内容(所有东西),则需要用另一种方法得到.元素里的内容可能包括:文本或元素.需要用innerHTML属性.
+        
+           var div = document.getElementById('mydiv');
+           console.log(div.innerHTML); 
+           
+           innerHTML属性除了可以获取标签内的内容外,还可以设置标签内的内容.
+           var div = document.getElementById('mydiv');
+           div.innerHTML = '你好';
+         
+2.3获取元素节点中的文本   
+利用innerText属性获取的只能是文本节点，不能是其他，当然innerText属性除了获取，也可以设置本元素中的文本.
+
+        var div =document.getElementById('mydiv');
+        console.log(div.innerText);
+        div.innerText = 'hello';          
+
+2.4获取元素的类名   
+利用className属性获取元素的类名,以字符串的形式返回.同时可以设置新的class类名,需要注意的是,返回值是一个字符串.
+
+        var div = document.getElementById('mydiv');
+        console.log(div.className);
+
+如果更换其中一个类,则需要考虑该字符串中其他类是否应该一起设置.
+
+        div.className = 'd a c';
+        console.log(div.className);
+        
+2.5获取元素样式  
+style属性可以获取元素内联样式的所有属性,当然如果继续在style中找属性名 如:backgroundColor,就可以得到该属性的值,以字符串的形式返回.同时也可以设置该属性,从而达到增加或更改样式.需要注意的是,以js形式增加的样式的优先级大于css优先级.
+
+    <div style="background-color: blue;"></div>
+    <script>
+        var div = document.getElementsByTagName('div');
+        //js拿到和获取的是内联
+        console.log(div[0].style.backgroundColor);
+    </script>
+    
+2.6获取元素的属性   
+getAttribute('')可以获取元素的某个属性,要将属性名称放在括号中记得要用引号括起来.返回值就是字符串形式的属性值.
+
+    <div id="mydiv" class="box" data-ww="yes"> 随便 </div>
+    <a href="http://www.baidu.com">百度</a>
+    <script>
+    var div = document.getElementById('mydiv');
+    var a =document.getElementsByTagName('a');
+
+    console.log(div.getAttribute('data-ww'));
+    console.log(a[0].getAttribute('href'));
+    </script>
+
+//凡有get就会有set设置
+ 
+2.7设置元素属性
+setAttribute()可以设置元素的某个属性，第一个参数是属性名，第二个参数是属性值，都需要用引号括起来以逗号分隔。
+
+        var div = document.getElementsByTagName('div');
+        var a = document.getElementsByTagName('a');
+
+        div[0].setAttribute('id','mydiv');
+        a[0].setAttribute('href','http://www.baidu.com');
+        
+2.8删除元素属性
+使用removeAttribute(),可以删除某个元素的某个属性，括号中放入需要删除的属性名，用引号包裹.
+
+       var div = document.getElementById('mydiv');
+       div.removeAttribute('id');
+
+3.增加元素
+3.1创建元素节点   
+        //用一个变量承接在文档中'创建'的一个元素
+        var div = document.createElement('div');
+        //将已经创建的元素放在想放的位置
+        document.body.appendChild(div);
+        
+3.2创建文本节点   
+            var p = document.getElementById('p');
+            var text = document.createTextNode('一段文字');
+            p.appendChild(text); 
+ 
+3.3css样式赋予   
+        var div = document.getElementById('mydiv');
+        div.style.cssText='width:100px;height:100px;background-color:blue;'; 
+        
+3.4在某元素前插入创建的新元素   
+insertBefore()这个函数和appendChild()用法基本一致,都是向父级中插入一个子元素,但区别是insertBefore()是可以选择插入的位置,它需要插入到某一个元素之前的位置,因此需要那个子元素,insertBefore()有两个参数,第一个参数是需要插入的元素,第二个参数是在谁之前插入,两个参数用逗号分隔.
+
+        <ul id='ul'>
+        <li id="pg">苹果</li>
+        <li id="jz">橘子</li>
+        <li>香蕉</li>
+    </ul>
+    <script>
+        var ul = document.getElementById('ul');
+        //获取苹果
+        var pg = document.getElementById('pg');
+        //获取橘子
+        var jz = document.getElementById('jz');
+        var li = document.createElement('li');
+        //在父级中插入一个元素(插入元素,在谁前面)
+        ul.insertBefore(li,jz);
+        var t = document.createTextNode('火龙果');
+        li.appendChild(t);
+    </script>
+    
+4.删除和替换元素
+4.1元素的替换   
+元素的替换实在父元素中一个子元素需要被另一个新的子元素所替代,使用replaceChild()方法,该方法有两个参数,第一个参数是将要替换的新元素,第二个是被替换的旧元素,中间用逗号分隔.
+    <div id="mydiv"></div>
+    <script>
+        var div =document.getElementById('mydiv');
+        var myp =document.createElement('p');
+        //在父元素中替换子元素,第一个是新的元素,第二个是旧的
+        document.body.replaceChild(myp,mydiv);
+    </script>
+    
+4.2元素的删除
+元素的删除是在父元素的其中一个子元素需要删除,使用removeChild()方法,将需要删除的元素放入括号中.
+
+    <div id="mydiv"></div>
+    <script>
+        var mydiv = document.getElementById('mydiv');
+        document.body.removeChild(mydiv);
+    </script>
+      
+5.查找节点
+5.1获取第一个和最后一个子节点
+    myul.firstChild
+    myul.lastChild
+5.2获取所有的子节点
+    myul.childNodes
+5.3获取父节点
+    myul.parentNode
+5.4获取兄弟节点
+前一个兄弟节点:mydiv.previousSibling
+后一个兄弟节点:mydiv.nextSibling    
+5.5节点的属性 
+    mydiv.nodeName
+    mydiv.nodeValue
+    mydiv.nodeType
+
+6.元素的位置属性
+6.1元素的宽高属性
+包含边框：
+宽度：offsetWidth
+高度：offsetHeight  
+不包含边框：
+宽度：clientWidth
+高度：clientHeight
+
+6.2子元素与父元素的距离
+左边界：offsetLeft
+上边界：offsetTop

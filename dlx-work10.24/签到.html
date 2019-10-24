@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+	<h3>名单：Amy,dan,jack,mike,lili,bob,mary,大头,小白,爱豆</h3>
+	
+    <input type="text" id="in1">
+    <button id="btn">签到</button>
+    <div id="div"></div>
+    <div id="div2">
+    	
+    </div>
+    <script>
+        var in1 = document.getElementById('in1');
+        var btn = document.getElementById('btn');
+        var div = document.getElementById('div');
+        var div2 = document.getElementById('div2');        
+        
+        var a1 = ['Amy','dan','jack','mike','lili','bob','mary','大头','小白','爱豆'];
+        var a2 = [];
+        
+        btn.onclick=function(){
+           if(in1.value!=a1[a1.indexOf(in1.value)]){
+           	alert('你输入的姓名不存在');
+           }else{
+           	if(a2.length>=a1.length){
+           		alert('已签到');
+           	}else{
+           		if(in1.value!=a2[a2.indexOf(in1.value)]){
+           			a2.push(in1.value);
+           			alert('签到成功');
+           			if(a2.length!=a1.length){
+           				div.innerText=('未签到的人数：'+(a1.length-a2.length));
+           			}
+           		}
+           	}
+           }
+           div2.innerHTML='已签'+a2;
+        }
+    </script>
+</body>
+</html>
