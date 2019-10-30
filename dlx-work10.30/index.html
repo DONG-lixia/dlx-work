@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="jquery/jquery-1.10.2.min.js"></script>
+	</head>
+	<body>
+		<ul id="ul">
+			<li class="li1" id="li1"></li>
+			<li id="li2"></li>
+			<li id="li3"></li>
+			<li id="li4"></li>
+			<li id="li5"></li>
+			<li id="li6"></li>
+			<li id="li7"></li>
+			
+		</ul>
+		<script type="text/javascript">
+			$("#ul").css({"list-style":"none"})
+
+		    $("li").css({"width":"70px","height":"70px","border-radius":"50%","border":"5px solid white","float":"left"})
+			$(".li1").css({"width":"100px","height":"100px","backgroundColor":"red","border-radius":"50%","border":"5px solid white"})
+			$("li:nth-child(2)").css({"backgroundColor":"orange","margin-top":"15px","display":"none"})
+			$("li:nth-child(3)").css({"backgroundColor":"yellow","margin-top":"15px","display":"none"})
+		    $("li:nth-child(4)").css({"backgroundColor":"green","margin-top":"15px","display":"none"})
+		    $("li:nth-child(5)").css({"backgroundColor":"aqua","margin-top":"15px","display":"none"})
+		    $("li:nth-child(6)").css({"backgroundColor":"powderblue","margin-top":"15px","display":"none"})
+		    $("li:nth-child(7)").css({"backgroundColor":"plum","margin-top":"15px","display":"none"})
+		    
+		    
+		    var ist=true
+			 $("#li1").click(function(){
+			 	if (ist) {
+			 		ist=false
+			 		$("#li2,#li3,#li4,#li5,#li6,#li7").css("display","block")
+			 	} else{
+			 		ist=true
+			 		$("#li2,#li3,#li4,#li5,#li6,#li7").css("display","none")
+			 		$("body").css("backgroundColor","white")
+			 	}
+			 })
+           
+			$("#li2").click(function() {
+				$("body").css("background-color", "orange")
+			})
+			$("#li3").click(function() {
+				$("body").css("background-color", "yellow")
+			})
+			$("#li4").click(function() {
+				$("body").css("background-color", "green")
+			})
+			$("#li5").click(function() {
+				$("body").css("background-color", "aqua")
+			})
+			$("#li6").click(function() {
+				$("body").css("background-color", "powderblue")
+			})
+		    $("#li7").click(function() {
+				$("body").css("background-color", "plum")
+			})
+
+		    
+		</script>
+	</body>
+</html>
